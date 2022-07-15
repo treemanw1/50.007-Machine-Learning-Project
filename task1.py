@@ -20,13 +20,18 @@ def gradients(X, y, yhat):
     return dw, db
 
 
+# might not be right
+def normalize(X):
+    return X/np.linalg.norm(X)
+
+
 def train(X, y, bs, epochs, lr):
     m, n = X.shape #
     w = np.zeros((n, 1))
     b = 0
     y = y.reshape(m, 1)
     # Normalizing the inputs.
-    # x = normalize(X)
+    x = normalize(X)
     losses = []
     for j in range(epochs):
         for i in range(m//bs):
@@ -43,13 +48,20 @@ def train(X, y, bs, epochs, lr):
     return w, b, losses
 
 
-# def predict(X):
+def predict(X, w, b):
+    # X --> Input.
 
+    # Normalizing the inputs.
+    x = normalize(X)
 
+    # Calculating presictions/y_hat.
+    preds = sigmoid(np.dot(X, w) + b)
 
+    # Empty List to store predictions.
+    pred_class = []
+    # if y_hat >= 0.5 --> round up to 1
+    # if y_hat < 0.5 --> round up to 1
+    pred_class = [1 if i > 0.5 else 0 for i in preds]
 
-df = pd.read_csv('csvs/train.csv')
-data = df.to_numpy()
-print(len(data))
-print(df)
-print(data)
+    return np.array(pred_class)
+
