@@ -1,0 +1,6 @@
+destinations.py
+destinations.json
+destinations_processed.json
+
+csvs/test_tfidf_features.csv
+csvs/train_tfidf_features.csv
