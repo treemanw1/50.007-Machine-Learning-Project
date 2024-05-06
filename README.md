@@ -1,4 +1,4 @@
-# ML-Project
+# 50.007 Machine Learning Project
 ## Task 1: Implement Logistics Regression (10 marks)
 Recalled that you have learned about Logistic Regression in your earlier class. Your task is to implement a Logistic Regression model from scratch. Note that you are NOT TO USE the sklearn logistic regression package or any other pre-defined logistic regression package for this task! Usage of any logistic regression packages will result in 0 marks for this task.
 
